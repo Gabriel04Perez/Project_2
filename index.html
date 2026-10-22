@@ -162,10 +162,13 @@
             <h2>Proposition: U.S. CO₂ emissions from burning fossil fuels are no longer a growing climate problem.</h2>
 
             <p>
-                Dataset: IMF Climate Change Indicators, United States. Both visualizations use the indicator
-                <em>CO₂ Emissions embodied in Domestic Final Demand, Production, and Trade</em>, which comes from
-                the OECD Trade in Embodied CO₂ (TeCO₂) database and counts CO₂ from fuel combustion only. Design
-                decisions are scored from −2 (fully deceptive) to +2 (fully earnest).
+                Dataset: IMF Climate Change Indicators, United States. Each visualization stacks two charts built
+                from two of its indicators. The top chart uses <em>CO₂ Emissions embodied in Domestic Final Demand,
+                Production, and Trade</em>, which comes from the OECD Trade in Embodied CO₂ (TeCO₂) database and
+                counts CO₂ from fuel combustion only. The bottom chart uses <em>Fossil Fuel Subsidies</em> (IMF,
+                2023 update), whose implicit subsidies include the unpriced climate cost of each fuel's CO₂; its
+                values for 2023–2030 are IMF projections and are marked as such on the charts. Design decisions are
+                scored from −2 (fully deceptive) to +2 (fully earnest).
             </p>
 
             <section>
@@ -173,13 +176,15 @@
 
                 <figure>
                     <img
-                        src="images/a2_final.png"
-                        alt="Line chart of U.S. fossil-fuel CO₂ emissions from 2000 to 2017. Emissions peak at 5.84 billion tonnes in 2005 and fall 17% to 4.85 billion tonnes in 2017. A green shaded area between the line and a dotted 2005-level line is labeled 6.9 billion tonnes of CO₂ avoided since 2005."
+                        src="images/combined_for.png"
+                        alt="Two stacked charts under the headline “America’s Fossil-Fuel Carbon Problem Is Shrinking.” Top: line chart of U.S. fossil-fuel CO₂ emissions from 2000 to 2017, peaking at 5.84 billion tonnes in 2005 and falling 17% to 4.85 billion tonnes in 2017, with a green shaded area labeled 6.9 billion tonnes of CO₂ avoided since 2005. Bottom: line chart of U.S. coal subsidies as a share of GDP from 2015 to 2030, falling from 0.84% to 0.55% by 2022 (−35%), the latest actual year, and projected by the IMF to reach 0.46% (−45%) by 2030; the projection years are shaded and drawn dashed."
                     />
                     <figcaption>
-                        Annual CO₂ emissions from fossil-fuel combustion by producers in the United States,
-                        2000–2017, in billions of tonnes. The shaded area adds up each year's gap below the 2005
-                        peak. Source: OECD TeCO₂ database (2021), via IMF Climate Change Indicators.
+                        Top: annual CO₂ emissions from fossil-fuel combustion by producers in the United States,
+                        2000–2017, in billions of tonnes; the shaded area adds up each year's gap below the 2005
+                        peak. Bottom: explicit and implicit U.S. coal subsidies as a share of GDP, 2015–2030; values
+                        after 2022 are IMF projections. Sources: OECD TeCO₂ database (2021) and IMF Fossil Fuel
+                        Subsidies Data: 2023 Update, via IMF Climate Change Indicators.
                     </figcaption>
                 </figure>
 
@@ -187,8 +192,8 @@
 
                 <ul>
                     <li>
-                        <strong>Ending the window in 2017 and starting it in 2000 (Score: −1.5).</strong>
-                        The dataset runs from 1995 to 2018, but emissions rose 2.8% in 2018 (4.85 → 4.99 billion
+                        <strong>Ending the emissions window in 2017 and starting it in 2000 (Score: −1.5).</strong>
+                        The emissions data runs from 1995 to 2018, but emissions rose 2.8% in 2018 (4.85 → 4.99 billion
                         tonnes). Stopping one year early lets the line end at its lowest point and gives the
                         headline its largest possible drop: −17%, versus −15% through 2018. Starting in 2000 also
                         hides that 2017 is only 6% below 1995, so the 2005 peak reads as a high plateau rather
@@ -197,43 +202,49 @@
                         actually stops, which makes this cut hard to catch and is why we score it as deceptive.
                     </li>
                     <li>
-                        <strong>Truncated y-axis starting at 4.4 billion tonnes (Score: −1).</strong>
-                        On a zero-based axis, the 2005–2017 decline would fill about 16% of the plot height; on
-                        this axis it fills about 60%, so a moderate decline reads as a steep fall. We kept the
-                        tick labels evenly spaced and clearly labeled, so a careful reader can recover the true
-                        scale. Line charts are conventionally allowed a non-zero baseline, which is exactly what
-                        makes the choice feel normal. A zero-based version made the decline look like a gentle
-                        slope that undercut the title.
+                        <strong>Truncated y-axes on both charts (Score: −1).</strong>
+                        The emissions chart starts at 4.4 billion tonnes and the coal chart at 0.4% of GDP. On
+                        zero-based axes, the 2005–2017 emissions decline would fill about 16% of the plot height
+                        and the 2015–2022 coal decline about 31%; here they fill about 60% and 53%, so moderate
+                        declines read as steep falls. We kept the tick labels evenly spaced and clearly labeled,
+                        so a careful reader can recover the true scale. Line charts are conventionally allowed a
+                        non-zero baseline, which is exactly what makes the choice feel normal. Zero-based versions
+                        made both declines look like gentle slopes that undercut the titles.
                     </li>
                     <li>
                         <strong>The "6.9 billion tonnes avoided" calculated field (Score: −1).</strong>
                         For every year after 2005 we computed the gap between that year's emissions and the 2005
-                        peak, summed the gaps, and shaded the area green. The arithmetic is correct, but the word
-                        "avoided" quietly assumes that emissions would otherwise have stayed at their all-time
-                        high every year, and it implies deliberate action. Turning a yearly rate into one large
-                        cumulative number makes the progress feel concrete and is the chart's main emotional
-                        payload. We considered a bar chart of year-over-year changes, but a single big number
-                        was more memorable.
+                        peak, summed the gaps, and shaded the area green, a conventional color for environmental
+                        progress. The arithmetic is correct, but the word "avoided" quietly assumes that emissions
+                        would otherwise have stayed at their all-time high every year, and it implies deliberate
+                        action. We reinforced that reading by leaving the 2009 dip (−7.7% in a single year)
+                        unlabeled: it was driven largely by the Great Recession rather than climate policy, and
+                        naming it would have handed readers a less flattering explanation. We considered a bar
+                        chart of year-over-year changes, but a single big cumulative number was more memorable.
                     </li>
                     <li>
-                        <strong>Production-based fossil-fuel CO₂, labeled precisely (Score: +1.5).</strong>
-                        We plot "CO₂ embodied in production", the territorial measure that national inventories
-                        and climate agreements use, so the series itself is not cherry-picked. After checkpoint
-                        feedback, the title, subtitle, axis and source note all say "fossil-fuel CO₂" or "fuel
-                        combustion", because that is exactly what the OECD series measures; this narrows our
-                        claim to what the data can support. The measure is still incomplete: it leaves out the
-                        CO₂ released abroad to make goods Americans import, which is the gap the AGAINST chart
-                        exploits.
+                        <strong>Pairing emissions with coal subsidies, measured as a share of GDP (Score: −1.5).</strong>
+                        Stacking a cost chart under the emissions chart makes two different measures read as
+                        corroborating evidence, and the shared headline treats both as one "carbon problem". The
+                        link is real, since the IMF's implicit subsidies include the climate cost of coal's CO₂
+                        (and the subtitle says so), but the chart cannot separate that cost from air pollution and
+                        the other components. The panel also shows coal alone: natural gas, which largely replaced
+                        coal, rose from 0.37% to 0.47% of GDP over 2015–2022 and is left out. Measuring as a share
+                        of GDP flatters the trend too: in constant 2021 dollars, coal's decline through 2022 is 26%,
+                        not 35%, because the economy grew. We tried a coal-plus-gas panel, but it barely moved
+                        (−4% in dollars), which would have weakened the argument.
                     </li>
                     <li>
-                        <strong>Selective annotation and a calm green palette (Score: −0.5).</strong>
-                        We labeled only the 2005 peak and the 2017 endpoint, and drew a dotted "2005 level" line
-                        so every later year reads as an improvement on the worst year. We deliberately left the
-                        2009 dip (−7.7% in a single year) unlabeled: it was driven largely by the Great
-                        Recession rather than climate policy, and naming it would have handed readers a less
-                        flattering explanation for the decline. Green, a conventional color for environmental
-                        progress, and a subtitle stressing "every year since" reinforce the sense that the
-                        problem is behind us.
+                        <strong>Naming the measures precisely and marking the projections (Score: +1).</strong>
+                        The emissions chart plots "CO₂ embodied in production", the territorial measure that
+                        national inventories use, so it is not cherry-picked, just incomplete: it leaves out the CO₂
+                        released abroad to make goods Americans import, which the AGAINST visualization exploits.
+                        After checkpoint feedback, every title, axis and note names its quantity as fossil-fuel or
+                        fuel-combustion CO₂, narrowing our claim to what the data supports. In the coal chart, the
+                        IMF projections for 2023–2030 are shaded, labeled, drawn dashed and end in a hollow marker,
+                        and the actual change (−35% by 2022) gets its own label; the overall headline's coal claim
+                        rests on actual years only. We score this +1 rather than +2 because the coal chart's own
+                        title, "on track to be cut nearly in half by 2030", still leans on the forecast.
                     </li>
                 </ul>
             </section>
@@ -243,13 +254,16 @@
 
                 <figure>
                     <img
-                        src="images/b2_final.png"
-                        alt="Grouped bar chart of fossil-fuel CO₂ embodied in U.S. imports and exports, averaged by period from 1995–99 to 2020–21. Imported CO₂ rises from 934 to 2,065 million tonnes per year, labeled ×2.2 versus 1995–99, while exported CO₂ stays near 600 million tonnes. An annotation says none of this imported CO₂ is counted in official U.S. emissions totals."
+                        src="images/combined_against.png"
+                        alt="Two stacked charts under the headline “America’s Fossil-Fuel Carbon Problem Is Still Growing.” Top: grouped bar chart of fossil-fuel CO₂ embodied in U.S. imports and exports, averaged by period from 1995–99 to 2020–21; imported CO₂ rises from 934 to 2,065 million tonnes per year, labeled ×2.2 versus 1995–99, while exported CO₂ stays near 600 million tonnes, and an annotation says none of the imported CO₂ is counted in official U.S. emissions totals. Bottom: line chart of U.S. natural-gas subsidies and U.S. GDP, both indexed to 2015 = 100, from 2015 to 2030; gas subsidies are up 44% by 2022, three times faster than GDP, and are projected by the IMF to double by 2030; the projection years are shaded and drawn dashed."
                     />
                     <figcaption>
-                        Average annual CO₂ from fossil-fuel combustion embodied in U.S. imports (red) and exports
-                        (gray), grouped by period, 1995–2021, in millions of tonnes. Sources: OECD TeCO₂ database
-                        (2021) and IMF Direction of Trade Statistics (2022), via IMF Climate Change Indicators.
+                        Top: average annual CO₂ from fossil-fuel combustion embodied in U.S. imports (red) and
+                        exports (gray), grouped by period, 1995–2021, in millions of tonnes. Bottom: explicit and
+                        implicit U.S. natural-gas subsidies vs. U.S. GDP, both indexed to 2015 = 100, 2015–2030;
+                        values after 2022 are IMF projections. Sources: OECD TeCO₂ database (2021), IMF Direction of
+                        Trade Statistics (2022) and IMF Fossil Fuel Subsidies Data: 2023 Update, via IMF Climate
+                        Change Indicators.
                     </figcaption>
                 </figure>
 
@@ -259,12 +273,12 @@
                     <li>
                         <strong>Measuring the CO₂ embodied in imports, with exports as the baseline (Score: +1.5).</strong>
                         Counting the CO₂ emitted abroad to make what Americans buy is an established method (the
-                        OECD TeCO₂ database exists to measure it), and it directly answers the FOR chart:
+                        OECD TeCO₂ database exists to measure it), and it directly answers the FOR emissions chart:
                         territorial inventories really do leave this CO₂ out. Showing exports next to imports
                         keeps the comparison fair, since it shows that the U.S. is a large net importer of
                         embodied carbon (exports stay flat near 600 million tonnes), not just that trade grew.
                         The annotation "None of this imported CO₂ is counted in official U.S. emissions totals"
-                        is true, and it reframes the FOR chart's decline as an accounting artifact rather than
+                        is true, and it reframes the FOR emissions chart's decline as an accounting artifact rather than
                         progress.
                     </li>
                     <li>
@@ -288,21 +302,26 @@
                         suspicious there, so we chose the binned bars.
                     </li>
                     <li>
-                        <strong>A 1995–99 reference line and a "×2.2" callout (Score: −0.5).</strong>
-                        The dotted line at the first period's level makes every later bar read as "more than
-                        then", and the ×2.2 callout compares the lowest period with the highest. This endpoint
-                        comparison skips the 10% decline from 2005–09 to 2010–14, which would have weakened the
-                        "keeps climbing" story. The bars do start at zero, so their lengths are honest; the slant
-                        is in which comparison we chose to spell out.
+                        <strong>Natural gas alone, indexed against GDP (Score: −1).</strong>
+                        The bottom chart shows natural gas by itself. Gas grew mostly by replacing coal: the two
+                        together cost 4% less in constant dollars in 2022 than in 2015, which the chart never shows.
+                        Indexing to 2015 = 100 makes gas's rise look dramatic while hiding its size, about $111
+                        billion of a $757 billion total in 2022 (15%). The GDP line is a calculated field: we
+                        backed GDP out of the data as total subsidies divided by their share of GDP, which gives a
+                        fair yardstick for "faster than the economy". Following checkpoint feedback, the 2023–2030
+                        projections are shaded, labeled and dashed, and the "Up 44% by 2022, 3× faster" callout
+                        uses actual years only; that disclosure keeps this at −1, though the chart's title still
+                        relies on the 2030 forecast for "double".
                     </li>
                     <li>
-                        <strong>Red versus gray, and the word "hidden" (Score: −0.5).</strong>
-                        Imports are drawn in alarm red and exports in neutral gray, so the eye lands on the
-                        growing bars and reads them as a warning. Calling the CO₂ "hidden" implies concealment,
-                        when the data is published and simply counted under a different accounting convention.
-                        Following checkpoint feedback, the title, subtitle and axis now name the quantity as
-                        "fossil-fuel CO₂", so the slant lives in word choice and color rather than in any
-                        ambiguity about what is being measured.
+                        <strong>Emphasis and wording: a reference line, the "×2.2" callout, red, and "hidden" (Score: −0.5).</strong>
+                        The dotted 1995–99 line makes every later bar read as "more than then", and the ×2.2
+                        callout compares the lowest period with the highest, skipping the 10% decline from 2005–09
+                        to 2010–14. Imports and gas costs are drawn in alarm red against neutral gray, so the eye
+                        lands on whatever is growing. "Hidden", used in both chart titles, implies concealment, when
+                        the data is published and simply counted under a different convention. The bars start at
+                        zero and every label names its quantity as fossil-fuel CO₂ or its cost, so the slant lives
+                        in emphasis and word choice rather than in the numbers themselves.
                     </li>
                 </ul>
             </section>
@@ -312,23 +331,26 @@
 
                 <p>
                     The most straightforward part of the project was finding two opposing stories. Both of our
-                    charts come from the same IMF/OECD table, and every number on them is accurate: emissions
-                    produced inside the U.S. really did fall after 2005, and the CO₂ embodied in U.S. imports
-                    really is large and growing. Persuasion turned out to be mostly a matter of selection: which
+                    visualizations draw on the same IMF dataset, and every number on them is accurate: emissions
+                    produced inside the U.S. really did fall after 2005, and coal's subsidies really are
+                    shrinking, while the CO₂ embodied in U.S. imports and the cost of natural gas really are
+                    growing. Persuasion turned out to be mostly a matter of selection: which
                     column to plot, which years to include, where to put the baseline, and which comparison to
                     spell out in large type. The hard part was keeping the deceptive choices subtle. Our
                     checkpoint feedback showed this clearly. Two of our draft charts drew IMF projections for
-                    2023–2030 as if they were measured data, and reviewers caught it at once. They also flagged
+                    2023–2030 as if they were measured data, and reviewers caught it at once; in the final versions,
+                    which now form the bottom half of each visualization, those years are shaded, labeled and
+                    dashed, and our headline claims rest on actual years. They also flagged
                     that our original proposition said "CO₂ emissions" when the data only covers fossil-fuel
-                    combustion, so we narrowed it. Meanwhile, the feedback never mentioned the FOR chart's missing
-                    2018 or the method seam inside the AGAINST chart's last bar. Deceptions that are drawn on the chart get
+                    combustion, so we narrowed it. Meanwhile, the feedback never mentioned the FOR emissions chart's missing
+                    2018 or the method seam inside the AGAINST imports chart's last bar. Deceptions that are drawn on the chart get
                     noticed; deceptions in what is left out mostly do not.
                 </p>
 
                 <p>
                     What surprised us most was how much our earnest choices helped our deceptive ones. Cited
-                    sources, honest tick labels, a zero-based bar chart and a precise "fossil-fuel CO₂" label all
-                    signal trustworthiness, and that trust is what lets a truncated window or a spliced series
+                    sources, honest tick labels, a zero-based bar chart, clearly marked projections and a precise
+                    "fossil-fuel CO₂" label all signal trustworthiness, and that trust is what lets a truncated window or a spliced series
                     slip past. We were also surprised by how natural some slanted choices felt while we made
                     them. Calling the shaded area "avoided" emissions, or calling imported carbon "hidden",
                     seemed like ordinary headline writing until we tried to defend each word against the data.
@@ -348,7 +370,7 @@
                     whether adding one honest sentence to the caption ("data continues to 2018, when emissions
                     rose"; "2019–2021 use a different method") would collapse the argument. If it would, the
                     choice is deceptive. The boundary is still blurry: a truncated axis on a line chart is
-                    conventional and often reasonable, yet its effect on our FOR chart was the same as a
+                    conventional and often reasonable, yet its effect on our FOR emissions chart was the same as a
                     deliberately exaggerated one. For that reason we think intent and disclosure matter as much
                     as any rule about axes or colors.
                 </p>
