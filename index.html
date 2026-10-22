@@ -1,358 +1,424 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Project 2 Report</title>
-        <style>
-            :root {
-                --color-neutral-95: hsl(220 10% 95%);
-                --color-neutral-90: hsl(220 10% 90%);
-                --color-neutral-80: hsl(220 10% 80%);
-                --color-neutral-70: hsl(220 10% 70%);
-                --color-neutral-60: hsl(220 10% 60%);
-                --color-neutral-50: hsl(220 10% 50%);
-                --color-neutral-40: hsl(220 10% 40%);
-                --color-neutral-30: hsl(220 10% 30%);
-                --color-neutral-20: hsl(220 10% 20%);
-                --color-neutral-10: hsl(220 10% 10%);
-            }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Project 2 Report</title>
+    <style>
+      :root {
+        --color-neutral-95: hsl(220 10% 95%);
+        --color-neutral-90: hsl(220 10% 90%);
+        --color-neutral-80: hsl(220 10% 80%);
+        --color-neutral-70: hsl(220 10% 70%);
+        --color-neutral-60: hsl(220 10% 60%);
+        --color-neutral-50: hsl(220 10% 50%);
+        --color-neutral-40: hsl(220 10% 40%);
+        --color-neutral-30: hsl(220 10% 30%);
+        --color-neutral-20: hsl(220 10% 20%);
+        --color-neutral-10: hsl(220 10% 10%);
+      }
 
-            html {
-                font: 100%/1.5 system-ui;
-                counter-reset: figure;
-                background: var(--color-neutral-95);
-                max-width: min(75vw, 80em);
-                margin: 0 auto;
-            }
+      html {
+        font: 100%/1.5 system-ui;
+        counter-reset: figure;
+        background: var(--color-neutral-95);
+        max-width: min(75vw, 80em);
+        margin: 0 auto;
+      }
 
-            /* Headings */
+      /* Headings */
 
-            h1,
-            h2,
-            h3,
-            h4,
-            h5,
-            h6 {
-                line-height: 1.1;
-                font-weight: 600;
-                text-wrap: balance;
-            }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        line-height: 1.1;
+        font-weight: 600;
+        text-wrap: balance;
+      }
 
-            h1,
-            h2 {
-                border-bottom: 1px solid var(--color-neutral-80);
-                padding-bottom: 0.2em;
-            }
+      h1,
+      h2 {
+        border-bottom: 1px solid var(--color-neutral-80);
+        padding-bottom: 0.2em;
+      }
 
-            h1 {
-                margin-block: 1em 0.5rem;
-                font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
-                font-weight: 800;
+      h1 {
+        margin-block: 1em 0.5rem;
+        font-size: clamp(2.5em, 150% + 2vh + 2vw, 10vmin);
+        font-weight: 800;
 
-                small {
-                    display: block;
-                    width: fit-content;
-                    padding: 0.2em 0.5em;
-                    margin-inline: auto;
-                    color: white;
-                    background: var(--color-neutral-40);
-                    font-size: 40%;
-                    text-transform: uppercase;
-                    white-space: nowrap;
-                }
-            }
+        small {
+          display: block;
+          width: fit-content;
+          padding: 0.2em 0.5em;
+          margin-inline: auto;
+          color: white;
+          background: var(--color-neutral-40);
+          font-size: 40%;
+          text-transform: uppercase;
+          white-space: nowrap;
+        }
+      }
 
-            h2 {
-                font-size: 180%;
-                color: var(--color-neutral-30);
-            }
+      h2 {
+        font-size: 180%;
+        color: var(--color-neutral-30);
+      }
 
-            h3 {
-                font-size: 130%;
-            }
+      h3 {
+        font-size: 130%;
+      }
 
-            /* Lists */
+      /* Lists */
 
-            ul,
-            ol {
-                padding-inline-start: 2em;
-            }
+      ul,
+      ol {
+        padding-inline-start: 2em;
+      }
 
-            li {
-                &::marker {
-                    color: var(--color-neutral-40);
-                }
+      li {
+        &::marker {
+          color: var(--color-neutral-40);
+        }
 
-                + li {
-                    margin-top: 0.2em;
-                }
-            }
+        + li {
+          margin-top: 0.2em;
+        }
+      }
 
-            /* Sectioning elements */
+      /* Sectioning elements */
 
-            header {
-                padding-block: 1em;
-                text-align: center;
-            }
+      header {
+        padding-block: 1em;
+        text-align: center;
+      }
 
-            main {
-                background: white;
-                color: var(--color-neutral-20);
-                border-radius: 1rem;
-                padding: 0.1rem 2rem;
-            }
+      main {
+        background: white;
+        color: var(--color-neutral-20);
+        border-radius: 1rem;
+        padding: 0.1rem 2rem;
+      }
 
-            /* Figures */
+      /* Figures */
 
-            figure {
-                margin: 1em 0;
-                padding: 0.5rem;
-                margin-inline: -0.5em;
-                border: 1px solid var(--color-neutral-80);
-                box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
-                text-align: center;
-                background: white;
+      figure {
+        margin: 1em 0;
+        padding: 0.5rem;
+        margin-inline: -0.5em;
+        border: 1px solid var(--color-neutral-80);
+        box-shadow: 0 0.1em 0.2em var(--color-neutral-95);
+        text-align: center;
+        background: white;
 
-                > img {
-                    max-width: 100%;
-                    height: auto;
-                }
+        > img {
+          max-width: 100%;
+          height: auto;
+        }
 
-                > figcaption {
-                    font: 500 75% var(--font-sans);
-                    background: var(--color-neutral-95);
-                    padding: 0.5rem;
-                    margin: -0.5rem;
-                    margin-top: 0.5rem;
-                    counter-increment: figure;
-                    text-align: left;
+        > figcaption {
+          font: 500 75% var(--font-sans);
+          background: var(--color-neutral-95);
+          padding: 0.5rem;
+          margin: -0.5rem;
+          margin-top: 0.5rem;
+          counter-increment: figure;
+          text-align: left;
 
-                    &::before {
-                        content: "Figure " counter(figure) ": ";
-                        font-weight: bold;
-                        color: var(--color-neutral-40);
-                    }
+          &::before {
+            content: "Figure " counter(figure) ": ";
+            font-weight: bold;
+            color: var(--color-neutral-40);
+          }
 
-                    a:not(:hover, :focus, :active) {
-                        color: inherit;
-                        text-decoration: underline;
-                        text-decoration-color: color-mix(
-                            in lab,
-                            currentColor,
-                            transparent 70%
-                        );
-                    }
-                }
-            }
-        </style>
-    </head>
+          a:not(:hover, :focus, :active) {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-color: color-mix(
+              in lab,
+              currentColor,
+              transparent 70%
+            );
+          }
+        }
+      }
+    </style>
+  </head>
 
-    <body>
-        <header>
-            <h1>
-                <small>Project 2</small>
-                Persuasive or Deceptive Visualization?
-            </h1>
+  <body>
+    <header>
+      <h1>
+        <small>Project 2</small>
+        Persuasive or Deceptive Visualization?
+      </h1>
 
-            <p><strong>Gabriel Perez, Gian Robles, Vedika Goyal, Mark Bishoff</strong> — <em>[UCSD Email Addresses]</em></p>
-        </header>
+      <p>
+        <strong>Gabriel Perez, Gian Robles, Vedika Goyal, Mark Bishoff</strong>
+        — <em>[UCSD Email Addresses]</em>
+      </p>
+    </header>
 
-        <main>
-            <h2>Proposition: U.S. CO₂ emissions from burning fossil fuels are no longer a growing climate problem.</h2>
+    <main>
+      <h2>
+        Proposition: U.S. CO₂ emissions from burning fossil fuels are no longer
+        a growing climate problem.
+      </h2>
 
-            <p>
-                Dataset: IMF Climate Change Indicators, United States. Both visualizations use the indicator
-                <em>CO₂ Emissions embodied in Domestic Final Demand, Production, and Trade</em>, which comes from
-                the OECD Trade in Embodied CO₂ (TeCO₂) database and counts CO₂ from fuel combustion only. Design
-                decisions are scored from −2 (fully deceptive) to +2 (fully earnest).
-            </p>
+      <p>
+        Dataset: IMF Climate Change Indicators, United States. Both
+        visualizations use the indicator
+        <em
+          >CO₂ Emissions embodied in Domestic Final Demand, Production, and
+          Trade</em
+        >, which comes from the OECD Trade in Embodied CO₂ (TeCO₂) database and
+        counts CO₂ from fuel combustion only. Design decisions are scored from
+        −2 (fully deceptive) to +2 (fully earnest).
+      </p>
 
-            <section>
-                <h3>FOR the Proposition</h3>
+      <section>
+        <h3>FOR the Proposition</h3>
 
-                <figure>
-                    <img
-                        src="images/a2_final.png"
-                        alt="Line chart of U.S. fossil-fuel CO₂ emissions from 2000 to 2017. Emissions peak at 5.84 billion tonnes in 2005 and fall 17% to 4.85 billion tonnes in 2017. A green shaded area between the line and a dotted 2005-level line is labeled 6.9 billion tonnes of CO₂ avoided since 2005."
-                    />
-                    <figcaption>
-                        Annual CO₂ emissions from fossil-fuel combustion by producers in the United States,
-                        2000–2017, in billions of tonnes. The shaded area adds up each year's gap below the 2005
-                        peak. Source: OECD TeCO₂ database (2021), via IMF Climate Change Indicators.
-                    </figcaption>
-                </figure>
+        <figure>
+          <img
+            src="images/a2_final.png"
+            alt="Line chart of U.S. fossil-fuel CO₂ emissions from 2000 to 2017. Emissions peak at 5.84 billion tonnes in 2005 and fall 17% to 4.85 billion tonnes in 2017. A green shaded area between the line and a dotted 2005-level line is labeled 6.9 billion tonnes of CO₂ avoided since 2005."
+          />
+          <figcaption>
+            Annual CO₂ emissions from fossil-fuel combustion by producers in the
+            United States, 2000–2017, in billions of tonnes. The shaded area
+            adds up each year's gap below the 2005 peak. Source: OECD TeCO₂
+            database (2021), via IMF Climate Change Indicators.
+          </figcaption>
+        </figure>
 
-                <p>Design Decisions and Rationale:</p>
+        <p>Design Decisions and Rationale:</p>
 
-                <ul>
-                    <li>
-                        <strong>Ending the window in 2017 and starting it in 2000 (Score: −1.5).</strong>
-                        The dataset runs from 1995 to 2018, but emissions rose 2.8% in 2018 (4.85 → 4.99 billion
-                        tonnes). Stopping one year early lets the line end at its lowest point and gives the
-                        headline its largest possible drop: −17%, versus −15% through 2018. Starting in 2000 also
-                        hides that 2017 is only 6% below 1995, so the 2005 peak reads as a high plateau rather
-                        than a short bump. We tried the full 1995–2018 range, but it ended on an uptick and
-                        invited a "we're just back to 1990s levels" reading. Few readers know where the data
-                        actually stops, which makes this cut hard to catch and is why we score it as deceptive.
-                    </li>
-                    <li>
-                        <strong>Truncated y-axis starting at 4.4 billion tonnes (Score: −1).</strong>
-                        On a zero-based axis, the 2005–2017 decline would fill about 16% of the plot height; on
-                        this axis it fills about 60%, so a moderate decline reads as a steep fall. We kept the
-                        tick labels evenly spaced and clearly labeled, so a careful reader can recover the true
-                        scale. Line charts are conventionally allowed a non-zero baseline, which is exactly what
-                        makes the choice feel normal. A zero-based version made the decline look like a gentle
-                        slope that undercut the title.
-                    </li>
-                    <li>
-                        <strong>The "6.9 billion tonnes avoided" calculated field (Score: −1).</strong>
-                        For every year after 2005 we computed the gap between that year's emissions and the 2005
-                        peak, summed the gaps, and shaded the area green. The arithmetic is correct, but the word
-                        "avoided" quietly assumes that emissions would otherwise have stayed at their all-time
-                        high every year, and it implies deliberate action. Turning a yearly rate into one large
-                        cumulative number makes the progress feel concrete and is the chart's main emotional
-                        payload. We considered a bar chart of year-over-year changes, but a single big number
-                        was more memorable.
-                    </li>
-                    <li>
-                        <strong>Production-based fossil-fuel CO₂, labeled precisely (Score: +1.5).</strong>
-                        We plot "CO₂ embodied in production", the territorial measure that national inventories
-                        and climate agreements use, so the series itself is not cherry-picked. After checkpoint
-                        feedback, the title, subtitle, axis and source note all say "fossil-fuel CO₂" or "fuel
-                        combustion", because that is exactly what the OECD series measures; this narrows our
-                        claim to what the data can support. The measure is still incomplete: it leaves out the
-                        CO₂ released abroad to make goods Americans import, which is the gap the AGAINST chart
-                        exploits.
-                    </li>
-                    <li>
-                        <strong>Selective annotation and a calm green palette (Score: −0.5).</strong>
-                        We labeled only the 2005 peak and the 2017 endpoint, and drew a dotted "2005 level" line
-                        so every later year reads as an improvement on the worst year. We deliberately left the
-                        2009 dip (−7.7% in a single year) unlabeled: it was driven largely by the Great
-                        Recession rather than climate policy, and naming it would have handed readers a less
-                        flattering explanation for the decline. Green, a conventional color for environmental
-                        progress, and a subtitle stressing "every year since" reinforce the sense that the
-                        problem is behind us.
-                    </li>
-                </ul>
-            </section>
+        <ul>
+          <li>
+            <strong
+              >Ending the window in 2017 and starting it in 2000 (Score:
+              −1.5).</strong
+            >
+            The dataset runs from 1995 to 2018, but emissions rose 2.8% in 2018
+            (4.85 → 4.99 billion tonnes). Stopping one year early lets the line
+            end at its lowest point and gives the headline its largest possible
+            drop: −17%, versus −15% through 2018. Starting in 2000 also hides
+            that 2017 is only 6% below 1995, so the 2005 peak reads as a high
+            plateau rather than a short bump. We tried the full 1995–2018 range,
+            but it ended on an uptick and invited a "we're just back to 1990s
+            levels" reading. Few readers know where the data actually stops,
+            which makes this cut hard to catch and is why we score it as
+            deceptive.
+          </li>
+          <li>
+            <strong
+              >Truncated y-axis starting at 4.4 billion tonnes (Score:
+              −1).</strong
+            >
+            On a zero-based axis, the 2005–2017 decline would fill about 16% of
+            the plot height; on this axis it fills about 60%, so a moderate
+            decline reads as a steep fall. We kept the tick labels evenly spaced
+            and clearly labeled, so a careful reader can recover the true scale.
+            Line charts are conventionally allowed a non-zero baseline, which is
+            exactly what makes the choice feel normal. A zero-based version made
+            the decline look like a gentle slope that undercut the title.
+          </li>
+          <li>
+            <strong
+              >The "6.9 billion tonnes avoided" calculated field (Score:
+              −1).</strong
+            >
+            For every year after 2005 we computed the gap between that year's
+            emissions and the 2005 peak, summed the gaps, and shaded the area
+            green. The arithmetic is correct, but the word "avoided" quietly
+            assumes that emissions would otherwise have stayed at their all-time
+            high every year, and it implies deliberate action. Turning a yearly
+            rate into one large cumulative number makes the progress feel
+            concrete and is the chart's main emotional payload. We considered a
+            bar chart of year-over-year changes, but a single big number was
+            more memorable.
+          </li>
+          <li>
+            <strong
+              >Production-based fossil-fuel CO₂, labeled precisely (Score:
+              +1.5).</strong
+            >
+            We plot "CO₂ embodied in production", the territorial measure that
+            national inventories and climate agreements use, so the series
+            itself is not cherry-picked. After checkpoint feedback, the title,
+            subtitle, axis and source note all say "fossil-fuel CO₂" or "fuel
+            combustion", because that is exactly what the OECD series measures;
+            this narrows our claim to what the data can support. The measure is
+            still incomplete: it leaves out the CO₂ released abroad to make
+            goods Americans import, which is the gap the AGAINST chart exploits.
+          </li>
+          <li>
+            <strong
+              >Selective annotation and a calm green palette (Score:
+              −0.5).</strong
+            >
+            We labeled only the 2005 peak and the 2017 endpoint, and drew a
+            dotted "2005 level" line so every later year reads as an improvement
+            on the worst year. We deliberately left the 2009 dip (−7.7% in a
+            single year) unlabeled: it was driven largely by the Great Recession
+            rather than climate policy, and naming it would have handed readers
+            a less flattering explanation for the decline. Green, a conventional
+            color for environmental progress, and a subtitle stressing "every
+            year since" reinforce the sense that the problem is behind us.
+          </li>
+        </ul>
+      </section>
 
-            <section>
-                <h3>AGAINST the Proposition</h3>
+      <section>
+        <h3>AGAINST the Proposition</h3>
 
-                <figure>
-                    <img
-                        src="images/b2_final.png"
-                        alt="Grouped bar chart of fossil-fuel CO₂ embodied in U.S. imports and exports, averaged by period from 1995–99 to 2020–21. Imported CO₂ rises from 934 to 2,065 million tonnes per year, labeled ×2.2 versus 1995–99, while exported CO₂ stays near 600 million tonnes. An annotation says none of this imported CO₂ is counted in official U.S. emissions totals."
-                    />
-                    <figcaption>
-                        Average annual CO₂ from fossil-fuel combustion embodied in U.S. imports (red) and exports
-                        (gray), grouped by period, 1995–2021, in millions of tonnes. Sources: OECD TeCO₂ database
-                        (2021) and IMF Direction of Trade Statistics (2022), via IMF Climate Change Indicators.
-                    </figcaption>
-                </figure>
+        <figure>
+          <img
+            src="images/b2_final.png"
+            alt="Grouped bar chart of fossil-fuel CO₂ embodied in U.S. imports and exports, averaged by period from 1995–99 to 2020–21. Imported CO₂ rises from 934 to 2,065 million tonnes per year, labeled ×2.2 versus 1995–99, while exported CO₂ stays near 600 million tonnes. An annotation says none of this imported CO₂ is counted in official U.S. emissions totals."
+          />
+          <figcaption>
+            Average annual CO₂ from fossil-fuel combustion embodied in U.S.
+            imports (red) and exports (gray), grouped by period, 1995–2021, in
+            millions of tonnes. Sources: OECD TeCO₂ database (2021) and IMF
+            Direction of Trade Statistics (2022), via IMF Climate Change
+            Indicators.
+          </figcaption>
+        </figure>
 
-                <p>Design Decisions and Rationale:</p>
+        <p>Design Decisions and Rationale:</p>
 
-                <ul>
-                    <li>
-                        <strong>Measuring the CO₂ embodied in imports, with exports as the baseline (Score: +1.5).</strong>
-                        Counting the CO₂ emitted abroad to make what Americans buy is an established method (the
-                        OECD TeCO₂ database exists to measure it), and it directly answers the FOR chart:
-                        territorial inventories really do leave this CO₂ out. Showing exports next to imports
-                        keeps the comparison fair, since it shows that the U.S. is a large net importer of
-                        embodied carbon (exports stay flat near 600 million tonnes), not just that trade grew.
-                        The annotation "None of this imported CO₂ is counted in official U.S. emissions totals"
-                        is true, and it reframes the FOR chart's decline as an accounting artifact rather than
-                        progress.
-                    </li>
-                    <li>
-                        <strong>Splicing two estimation methods into one series (Score: −2).</strong>
-                        Values for 1995–2018 come from the OECD TeCO₂ database, while 2019–2021 come from a
-                        different IMF extension built on trade statistics. At the seam, imports jump 66% in a
-                        single year (1,362 → 2,260 million tonnes), which reflects a change in method rather than
-                        a real surge. Using OECD years alone, the period average rises only about 1.4×; including
-                        the spliced years pushes the last bar to 2.2×, which is where the title's "more than
-                        doubled" comes from. The source note cites both datasets but never says where one stops,
-                        so only a reader who opens the raw data would notice. This is the most deceptive choice
-                        in our project.
-                    </li>
-                    <li>
-                        <strong>Five-year bins with a two-year final bin (Score: −1).</strong>
-                        Averaging years into periods is a calculated grouping that legitimately damps
-                        year-to-year noise, such as the 2009 trade collapse. Here it also hides the 2019 break:
-                        the 66% one-year jump becomes a smooth step between bars. The last bin averages only
-                        2020–2021, both from the spliced source, yet it is drawn exactly like the five-year bins.
-                        Our checkpoint also had a yearly line version of this chart, but the one-year spike looked
-                        suspicious there, so we chose the binned bars.
-                    </li>
-                    <li>
-                        <strong>A 1995–99 reference line and a "×2.2" callout (Score: −0.5).</strong>
-                        The dotted line at the first period's level makes every later bar read as "more than
-                        then", and the ×2.2 callout compares the lowest period with the highest. This endpoint
-                        comparison skips the 10% decline from 2005–09 to 2010–14, which would have weakened the
-                        "keeps climbing" story. The bars do start at zero, so their lengths are honest; the slant
-                        is in which comparison we chose to spell out.
-                    </li>
-                    <li>
-                        <strong>Red versus gray, and the word "hidden" (Score: −0.5).</strong>
-                        Imports are drawn in alarm red and exports in neutral gray, so the eye lands on the
-                        growing bars and reads them as a warning. Calling the CO₂ "hidden" implies concealment,
-                        when the data is published and simply counted under a different accounting convention.
-                        Following checkpoint feedback, the title, subtitle and axis now name the quantity as
-                        "fossil-fuel CO₂", so the slant lives in word choice and color rather than in any
-                        ambiguity about what is being measured.
-                    </li>
-                </ul>
-            </section>
+        <ul>
+          <li>
+            <strong
+              >Measuring the CO₂ embodied in imports, with exports as the
+              baseline (Score: +1.5).</strong
+            >
+            When Americans buy things made in other countries, CO₂ is released
+            over there to make them. Experts really do measure this, and
+            official U.S. totals really do leave it out. We also showed exports
+            so the comparison is fair: exports stay flat at about 600 million
+            tonnes while imports grow, so the U.S. brings in much more of this
+            CO₂ than it sends out. The note "None of this imported CO₂ is
+            counted in official U.S. emissions totals" is true. It suggests the
+            drop in the FOR chart comes from how CO₂ is counted, not from real
+            progress.
+          </li>
+          <li>
+            <strong
+              >Splicing two estimation methods into one series (Score:
+              −2).</strong
+            >
+            The numbers for 1995–2018 come from one source (the OECD), and the
+            numbers for 2019–2021 come from a different one (the IMF) that
+            estimates CO₂ in a different way. Where the two meet, imports jump
+            66% in one year (1,362 → 2,260 million tonnes). That jump comes from
+            switching methods, not from a real change. With OECD data alone,
+            imports grow only about 1.4 times. Adding the IMF years makes it 2.2
+            times, which is where the title's "more than doubled" comes from. We
+            list both sources but never say where one ends and the other begins,
+            so most readers would never notice. This is the most misleading
+            choice in our project.
+          </li>
+          <li>
+            <strong
+              >Five-year bins with a two-year final bin (Score: −1).</strong
+            >
+            We averaged the years into groups of five. This is a normal way to
+            smooth out ups and downs, like the trade drop in 2009. But it also
+            hides the sudden jump in 2019, so it looks like a smooth step
+            instead. The last bar only covers two years (2020–2021), both from
+            the second source, yet it looks just like the five-year bars. We
+            first made a line chart with one point per year, but the jump looked
+            suspicious there, so we picked bars instead.
+          </li>
+          <li>
+            <strong
+              >A 1995–99 reference line and a "×2.2" callout (Score:
+              −0.5).</strong
+            >
+            The dotted line shows the level of the first bar, so every later bar
+            looks like "more than before." The "×2.2" label compares the
+            smallest bar to the biggest one. This skips over the 10% drop
+            between 2005–09 and 2010–14, which would have hurt the "keeps going
+            up" story. The bars do start at zero, so their heights are honest.
+            The slant comes from which comparison we chose to point out.
+          </li>
+          <li>
+            <strong
+              >Red versus gray, and the word "hidden" (Score: −0.5).</strong
+            >
+            Imports are bright red and exports are plain gray, so your eye goes
+            straight to the growing red bars and sees them as a warning. Calling
+            the CO₂ "hidden" makes it sound like someone is keeping it secret,
+            but the data is public. It is just counted in a different way. After
+            feedback on our checkpoint, the title, subtitle, and axis now
+            clearly say "fossil-fuel CO₂," so the slant comes from word choice
+            and color, not from confusion about what is being measured.
+          </li>
+        </ul>
+      </section>
 
-            <section>
-                <h2>Final Reflection</h2>
+      <section>
+        <h2>Final Reflection</h2>
 
-                <p>
-                    The most straightforward part of the project was finding two opposing stories. Both of our
-                    charts come from the same IMF/OECD table, and every number on them is accurate: emissions
-                    produced inside the U.S. really did fall after 2005, and the CO₂ embodied in U.S. imports
-                    really is large and growing. Persuasion turned out to be mostly a matter of selection: which
-                    column to plot, which years to include, where to put the baseline, and which comparison to
-                    spell out in large type. The hard part was keeping the deceptive choices subtle. Our
-                    checkpoint feedback showed this clearly. Two of our draft charts drew IMF projections for
-                    2023–2030 as if they were measured data, and reviewers caught it at once. They also flagged
-                    that our original proposition said "CO₂ emissions" when the data only covers fossil-fuel
-                    combustion, so we narrowed it. Meanwhile, the feedback never mentioned the FOR chart's missing
-                    2018 or the method seam inside the AGAINST chart's last bar. Deceptions that are drawn on the chart get
-                    noticed; deceptions in what is left out mostly do not.
-                </p>
+        <p>
+          The most straightforward part of the project was finding two opposing
+          stories. Both of our charts come from the same IMF/OECD table, and
+          every number on them is accurate: emissions produced inside the U.S.
+          really did fall after 2005, and the CO₂ embodied in U.S. imports
+          really is large and growing. Persuasion turned out to be mostly a
+          matter of selection: which column to plot, which years to include,
+          where to put the baseline, and which comparison to spell out in large
+          type. The hard part was keeping the deceptive choices subtle. Our
+          checkpoint feedback showed this clearly. Two of our draft charts drew
+          IMF projections for 2023–2030 as if they were measured data, and
+          reviewers caught it at once. They also flagged that our original
+          proposition said "CO₂ emissions" when the data only covers fossil-fuel
+          combustion, so we narrowed it. Meanwhile, the feedback never mentioned
+          the FOR chart's missing 2018 or the method seam inside the AGAINST
+          chart's last bar. Deceptions that are drawn on the chart get noticed;
+          deceptions in what is left out mostly do not.
+        </p>
 
-                <p>
-                    What surprised us most was how much our earnest choices helped our deceptive ones. Cited
-                    sources, honest tick labels, a zero-based bar chart and a precise "fossil-fuel CO₂" label all
-                    signal trustworthiness, and that trust is what lets a truncated window or a spliced series
-                    slip past. We were also surprised by how natural some slanted choices felt while we made
-                    them. Calling the shaded area "avoided" emissions, or calling imported carbon "hidden",
-                    seemed like ordinary headline writing until we tried to defend each word against the data.
-                    The two charts reach opposite conclusions without a single false number, which convinced us
-                    that the ethics of a visualization lie in the relationship between the chart and the claim
-                    it is used to support, not in the numbers alone.
-                </p>
+        <p>
+          What surprised us most was how much our earnest choices helped our
+          deceptive ones. Cited sources, honest tick labels, a zero-based bar
+          chart and a precise "fossil-fuel CO₂" label all signal
+          trustworthiness, and that trust is what lets a truncated window or a
+          spliced series slip past. We were also surprised by how natural some
+          slanted choices felt while we made them. Calling the shaded area
+          "avoided" emissions, or calling imported carbon "hidden", seemed like
+          ordinary headline writing until we tried to defend each word against
+          the data. The two charts reach opposite conclusions without a single
+          false number, which convinced us that the ethics of a visualization
+          lie in the relationship between the chart and the claim it is used to
+          support, not in the numbers alone.
+        </p>
 
-                <p>
-                    We now define ethical analysis and visualization as design whose conclusion would survive the
-                    reader learning about every choice behind it. That gives us a working boundary. Choices that
-                    only emphasize something true, like color, annotation, a framing title or picking one
-                    legitimate measure over another, are acceptable persuasion, because disclosing them does not
-                    change what the data says. Choices that change what the data appears to say are misleading:
-                    cutting the time window to hide a reversal, splicing incompatible methods into one series,
-                    drawing forecasts as observations, or stating a counterfactual as fact. A simple test is
-                    whether adding one honest sentence to the caption ("data continues to 2018, when emissions
-                    rose"; "2019–2021 use a different method") would collapse the argument. If it would, the
-                    choice is deceptive. The boundary is still blurry: a truncated axis on a line chart is
-                    conventional and often reasonable, yet its effect on our FOR chart was the same as a
-                    deliberately exaggerated one. For that reason we think intent and disclosure matter as much
-                    as any rule about axes or colors.
-                </p>
-            </section>
-        </main>
-    </body>
+        <p>
+          We now define ethical analysis and visualization as design whose
+          conclusion would survive the reader learning about every choice behind
+          it. That gives us a working boundary. Choices that only emphasize
+          something true, like color, annotation, a framing title or picking one
+          legitimate measure over another, are acceptable persuasion, because
+          disclosing them does not change what the data says. Choices that
+          change what the data appears to say are misleading: cutting the time
+          window to hide a reversal, splicing incompatible methods into one
+          series, drawing forecasts as observations, or stating a counterfactual
+          as fact. A simple test is whether adding one honest sentence to the
+          caption ("data continues to 2018, when emissions rose"; "2019–2021 use
+          a different method") would collapse the argument. If it would, the
+          choice is deceptive. The boundary is still blurry: a truncated axis on
+          a line chart is conventional and often reasonable, yet its effect on
+          our FOR chart was the same as a deliberately exaggerated one. For that
+          reason we think intent and disclosure matter as much as any rule about
+          axes or colors.
+        </p>
+      </section>
+    </main>
+  </body>
 </html>
