@@ -194,48 +194,47 @@
                     <li>
                         <strong>Ending the emissions window in 2017 and starting it in 2000 (Score: −1.5).</strong>
                         The emissions data runs from 1995 to 2018, but emissions increased about 2.8% in 2018 
-                        (4.85 to 4.99 billion). Cutting that last year, lets the line end at its lowest point.
-                        Giving the headline its largest drop:  -17%, vs -15% through 2018. Starting in 2000 also
-                        hides that 2017 is ONLY 6% below 1995, the peak of 2005 reads high plateau rather than
-                        a small increase. 
-                    </li>
+                        (4.85 to 4.99 billion). Cutting that last year lets the line end at its lowest point. This 
+                        gives the headline its largest drop: -17% vs -15% through 2018. Additionally, starting 
+                        in 2000 also hdes that 2017 is only 6% below 1995, making the peak of 2005 read as a large change 
+                        rather than just a small increase.</li>
                     <li>
                         <strong>Truncated y-axes on both charts (Score: −1).</strong>
-                        The emissions chart starts at 4.4 billion tonnes and the coal chart at 0.4% of GDP. On
-                        zero-based axes. 2005-2017 emission decline about 16 % of the plot height. Then 2015–2022 coal 
-                        decline about 35% of the plot height. We kept the tick labels evenly spaced and clearly labeled,
-                        so a careful reader can recover the true scale. Line charts are conventionally allowed a
-                        non-zero baseline, which is exactly what makes the choice feel normal. Zero-based versions
-                        made both declines look like gentle slopes that undercut the titles.
+                        The emissions chart starts at 4.4 billion tonnes and the coal chart at 0.4% of GDP. On zero-based 
+                        axes, 2005-2017 emissions decline about 16% of the plot height, on ours, it fills about 60%. On the 
+                        coal chart, between 2015 and 2022 there is a 35% decline in plot height. We kept the tick labels 
+                        evenly spaced and clearly labeled, so a careful reader can recover the true scale. Line charts are 
+                        typically allowed a non-zero baseline, which is what makes the choice feel normal. Zero-based versions 
+                        made both declines look like gental slopes that do not support the titles.
                     </li>
                     <li>
                         <strong>The "6.9 billion tonnes avoided" calculated field (Score: −1).</strong>
-                        For every year after 2005 we computed the gap between that year's emissions and the 2005
-                        peak, summed the gaps, and shaded the area green, a conventional color for environmental
-                        progress. During the math, the word "avoided" assumes that emissions would otherwise
-                        have stayed at their all-time high every year. We ensure to enforce that wording by leaving
-                        the 2009 dip. Which was -7.7% in a single year, unlabeled. It was mostly driven by the
-                        Great Recession rather than climate policy. We considered a bar chart of year-over-year changes, 
-                        but a single big cumulative number was more memorable.
+                        For every year after 2005 we calculated the gap between that year's emissions and the peak 
+                        from 2005. Then we added up the gaps, and shaded the area green. The word "avoided" creates 
+                        the assumption that otherwise, emissions would have stayed at an all-time high each year. We 
+                        made sure to enforce that wording by leaving out the dip during 2009 (-7.7% in one year). It 
+                        was driven, mostly, by the Great Recession rather than climate policy. We also considered 
+                        creating a bar chart that showed the changes year-over-year, but decided on a line graph. 
                     </li>
                     <li>
-                        <strong>Pairing emissions with coal subsidies, measured as a share of GDP (Score: −1.5).</strong>
-                        Pairing a cost chart with an emission chart makes two different measures read as
-                        evidence, and the headlines shared as one "carbon problem". The connection is real, since 
-                        the IMF's implicit subsidies include the climate cost of coal's CO₂, but the chart cannot separate 
-                        that cost from air pollution. The panel also shows coal alone: natural gas, which largely replaced
-                        coal, rose from 0.37% to 0.47% of GDP over 2015–2022 and is left out. Measuring as a share
-                        of GDP flatters the trend too: in constant 2021 dollars, coal's decline through 2022 is 26%,
-                        not 35%, because the economy grew.
+                        <strong>Production-based fossil-fuel CO₂, labeled precisely (Score: +1.5).</strong>
+                        We plotted "CO₂ embodied in production", which is the territorial measure that national inventories
+                        and climate agreements use, so the series itself was not cherry-picked. After feedback on our 
+                        checkpoint, the title, subtitle, axis and source note all say "fossil-fuel CO₂" or "fuel
+                        combustion", because that is what the OECD series measured. This narrows down our
+                        claim to what the data can support. The measure is still incomplete as it leaves out the
+                        CO₂ released abroad to make goods Americans import, which is the gap the <em>against</em> chart
+                        exploits.
                     </li>
                     <li>
-                        <strong>Naming the measures precisely and marking the projections (Score: +1).</strong>
-                        The emissions chart plots "CO₂ embodied in production", the territorial measure that
-                        national inventories use. It leaves out the CO₂ released abroad to make goods Americans import, 
-                        which the AGAINST visualization exploits. In the coal chart, the IMF projections for 2023–2030 are shaded, 
-                        labeled, drawn dashed and end in a hollow marker, and the actual change (−35% by 2022) gets its own label; 
-                        the overall headline's coal claim rests on actual years only. We score this +1 rather than +2 because the 
-                        coal chart's own title, "on track to be cut nearly in half by 2030", still leans on the forecast.
+                        <strong>Selective annotation using the color green (Score: −0.5).</strong>
+                        We only labeled the 2005 peak and the 2017 endpoint. Additionally, we drew a dotted "2005 level" line
+                        so every later year reads as an improvement on the worst year. We deliberately left the
+                        2009 dip (−7.7% in a single year) unlabeled since it was driven largely by the Great
+                        Recession rather than climate policy, and naming it would have handed readers a less
+                        flattering explanation for the decline. We used green since it is what most people think of when 
+                        they think of environmental progress, and we added a subtitle stressing "every year since" to reinforce 
+                        the idea that the problem is behind us.
                     </li>
                 </ul>
             </section>
@@ -260,124 +259,98 @@
 
                 <p>Design Decisions and Rationale:</p>
 
-    <ul>
-          <li>
-            <strong
-              >Measuring the CO₂ embodied in imports, with exports as the
-              baseline (Score: +1.5).</strong
-            >
-            When Americans buy things made in other countries, CO₂ is released
-            over there to make them. Experts really do measure this, and
-            official U.S. totals really do leave it out. We also showed exports
-            so the comparison is fair: exports stay flat at about 600 million
-            tonnes while imports grow, so the U.S. brings in much more of this
-            CO₂ than it sends out. The note "None of this imported CO₂ is
-            counted in official U.S. emissions totals" is true. It suggests the
-            drop in the FOR chart comes from how CO₂ is counted, not from real
-            progress.
-          </li>
-          <li>
-            <strong
-              >Splicing two estimation methods into one series (Score:
-              −2).</strong
-            >
-            The numbers for 1995–2018 come from one source (the OECD), and the
-            numbers for 2019–2021 come from a different one (the IMF) that
-            estimates CO₂ in a different way. Where the two meet, imports jump
-            66% in one year (1,362 → 2,260 million tonnes). That jump comes from
-            switching methods, not from a real change. With OECD data alone,
-            imports grow only about 1.4 times. Adding the IMF years makes it 2.2
-            times, which is where the title's "more than doubled" comes from. We
-            list both sources but never say where one ends and the other begins,
-            so most readers would never notice. This is the most misleading
-            choice in our project.
-          </li>
-          <li>
-            <strong
-              >Five-year bins with a two-year final bin (Score: −1).</strong
-            >
-            We averaged the years into groups of five. This is a normal way to
-            smooth out ups and downs, like the trade drop in 2009. But it also
-            hides the sudden jump in 2019, so it looks like a smooth step
-            instead. The last bar only covers two years (2020–2021), both from
-            the second source, yet it looks just like the five-year bars. We
-            first made a line chart with one point per year, but the jump looked
-            suspicious there, so we picked bars instead.
-          </li>
-          <li>
-            <strong
-              >A 1995–99 reference line and a "×2.2" callout (Score:
-              −0.5).</strong
-            >
-            The dotted line shows the level of the first bar, so every later bar
-            looks like "more than before." The "×2.2" label compares the
-            smallest bar to the biggest one. This skips over the 10% drop
-            between 2005–09 and 2010–14, which would have hurt the "keeps going
-            up" story. The bars do start at zero, so their heights are honest.
-            The slant comes from which comparison we chose to point out.
-          </li>
-          <li>
-            <strong
-              >Red versus gray, and the word "hidden" (Score: −0.5).</strong
-            >
-            Imports are bright red and exports are plain gray, so your eye goes
-            straight to the growing red bars and sees them as a warning. Calling
-            the CO₂ "hidden" makes it sound like someone is keeping it secret,
-            but the data is public. It is just counted in a different way. After
-            feedback on our checkpoint, the title, subtitle, and axis now
-            clearly say "fossil-fuel CO₂," so the slant comes from word choice
-            and color, not from confusion about what is being measured.
-          </li>
-        </ul>
+<<<<<<< HEAD
+                <ul>
+                    <li>
+                        <strong>Measuring the CO₂ embodied in imports, with exports as the baseline (Score: +1.5).</strong>
+                        When Americans buy things made in other countries, CO₂ is released
+                        over there to make them. Experts really do measure this, and
+                        official U.S. totals really do leave it out. We also showed exports
+                        so the comparison is fair: exports stay flat at about 600 million
+                        tonnes while imports grow, so the U.S. brings in much more of this
+                        CO₂ than it sends out. The note "None of this imported CO₂ is
+                        counted in official U.S. emissions totals" is true. It suggests the
+                        drop in the FOR chart comes from how CO₂ is counted, not from real
+                        progress.
+                    </li>
+                    <li>
+                        <strong>Splicing two estimation methods into one series (Score: −2).</strong>
+                        The numbers for 1995–2018 come from one source (the OECD), and the
+                        numbers for 2019–2021 come from a different one (the IMF) that
+                        estimates CO₂ in a different way. Where the two meet, imports jump
+                        66% in one year (1,362 → 2,260 million tonnes). That jump comes from
+                        switching methods, not from a real change. With OECD data alone,
+                        imports grow only about 1.4 times. Adding the IMF years makes it 2.2
+                        times, which is where the title's "more than doubled" comes from. We
+                        list both sources but never say where one ends and the other begins,
+                        so most readers would never notice. This is the most misleading
+                        choice in our project.
+                    </li>
+                    <li>
+                        <strong>Five-year bins with a two-year final bin (Score: −1).</strong>
+                        We averaged the years into groups of five. This is a normal way to
+                        smooth out ups and downs, like the trade drop in 2009. But it also
+                        hides the sudden jump in 2019, so it looks like a smooth step
+                        instead. The last bar only covers two years (2020–2021), both from
+                        the second source, yet it looks just like the five-year bars. We
+                        first made a line chart with one point per year, but the jump looked
+                        suspicious there, so we picked bars instead.
+                    </li>
+                    <li>
+                        <strong>A 1995–99 reference line and a "×2.2" callout (Score:−0.5).</strong>
+                        The dotted line shows the level of the first bar, so every later bar
+                        looks like "more than before." The "×2.2" label compares the
+                        smallest bar to the biggest one. This skips over the 10% drop
+                        between 2005–09 and 2010–14, which would have hurt the "keeps going
+                        up" story. The bars do start at zero, so their heights are honest.
+                        The slant comes from which comparison we chose to point out.
+                    </li>
+                    <li>
+                        <strong>Red versus gray, and the word "hidden" (Score: −0.5).</strong>
+                        Imports are bright red and exports are plain gray, so your eye goes
+                        straight to the growing red bars and sees them as a warning. Calling
+                        the CO₂ "hidden" makes it sound like someone is keeping it secret,
+                        but the data is public. It is just counted in a different way. After
+                        feedback on our checkpoint, the title, subtitle, and axis now
+                        clearly say "fossil-fuel CO₂," so the slant comes from word choice
+                        and color, not from confusion about what is being measured.
+                    </li>
+                </ul>
             </section>
-
             <section>
                 <h2>Final Reflection</h2>
 
                 <p>
-                    The most straightforward part of the project was finding two opposing stories. Both of our
-                    visualizations draw on the same IMF dataset, and every number on them is accurate: emissions
-                    produced inside the U.S. really did fall after 2005, and coal's subsidies really are
-                    shrinking, while the CO₂ embodied in U.S. imports and the cost of natural gas really are
-                    growing. Persuasion turned out to be mostly a matter of selection: which
-                    column to plot, which years to include, where to put the baseline, and which comparison to
-                    spell out in large type. The hard part was keeping the deceptive choices subtle. Our
-                    checkpoint feedback showed this clearly. Two of our draft charts drew IMF projections for
-                    2023–2030 as if they were measured data, and reviewers caught it at once; in the final versions,
-                    which now form the bottom half of each visualization, those years are shaded, labeled and
-                    dashed, and our headline claims rest on actual years. They also flagged
-                    that our original proposition said "CO₂ emissions" when the data only covers fossil-fuel
-                    combustion, so we narrowed it. Meanwhile, the feedback never mentioned the FOR emissions chart's missing
-                    2018 or the method seam inside the AGAINST imports chart's last bar. Deceptions that are drawn on the chart get
-                    noticed; deceptions in what is left out mostly do not.
+                    The simplest part of our project was finding two stories that contradict one another. Both charts
+                    came from the same IMF/OECD table, and each number on the charts is accurate. After 2005, emissions produced 
+                    in the United States did truly fall and the CO₂ associated with U.S. imports is large and continuing to grow.
+                    We discovered that persuasion was largely between which choices we made, such as which columns get plotted,
+                    what times (years) to include, what the baseline should be, and what the overall comparison should be. The 
+                    difficult part was really trying to figure out how we should be deceptive while still keeping it subtle and 
+                    not easily identifiable. We used the feedback we got from the checkpoint to hide the deceptive techniques better. 
+                    Our drafts displayed IMF projections for 2023-2030 in a sense where it seemed like it were measured data, and 
+                    the graders identified it right away. We were also told that our original proposition stated "CO₂ emissions" while 
+                    the data only covered fossil-fuel combustion, so we had to narrow that down. Overall, we learned that deceptions 
+                    that are visible on the chart get noticed while the deceptions that are left out mostly do not.
                 </p>
 
                 <p>
-                    What surprised us most was how much our earnest choices helped our deceptive ones. Cited
-                    sources, honest tick labels, a zero-based bar chart, clearly marked projections and a precise
-                    "fossil-fuel CO₂" label all signal trustworthiness, and that trust is what lets a truncated window or a spliced series
-                    slip past. We were also surprised by how natural some slanted choices felt while we made
-                    them. Calling the shaded area "avoided" emissions, or calling imported carbon "hidden",
-                    seemed like ordinary headline writing until we tried to defend each word against the data.
-                    The two charts reach opposite conclusions without a single false number, which convinced us
-                    that the ethics of a visualization lie in the relationship between the chart and the claim
-                    it is used to support, not in the numbers alone.
+                    The most surprising thing for us was how much our truthful decisions helped our deceptive ones. Doing things correctly, 
+                    like labelling tick marks correctly, starting the bar chart at zero, and using precise labels all helped establish our credibility. This 
+                    credibility is what let us get away with our truncated time window as well as our spliced series. Some of our misleading choices also felt natural, 
+                    like when we chose to call the shaded area "avoided emissions", or when we called imported carbon "hidden", it made it seem like normal 
+                    headlines until we had to defend our claims. Since the charts come to opposing conclusions without using falsified data, we learned 
+                    that the ethics of a visualization lie between the chart <em>and</em> the claim it supports, and not only the quantitative data. 
                 </p>
 
                 <p>
-                    We now define ethical analysis and visualization as design whose conclusion would survive the
-                    reader learning about every choice behind it. That gives us a working boundary. Choices that
-                    only emphasize something true, like color, annotation, a framing title or picking one
-                    legitimate measure over another, are acceptable persuasion, because disclosing them does not
-                    change what the data says. Choices that change what the data appears to say are misleading:
-                    cutting the time window to hide a reversal, splicing incompatible methods into one series,
-                    drawing forecasts as observations, or stating a counterfactual as fact. A simple test is
-                    whether adding one honest sentence to the caption ("data continues to 2018, when emissions
-                    rose"; "2019–2021 use a different method") would collapse the argument. If it would, the
-                    choice is deceptive. The boundary is still blurry: a truncated axis on a line chart is
-                    conventional and often reasonable, yet its effect on our FOR emissions chart was the same as a
-                    deliberately exaggerated one. For that reason we think intent and disclosure matter as much
-                    as any rule about axes or colors.
+                    We define ethical analysis and visualization as design where the conclusion would still hold up even after the reader learns about every choice 
+                    behind it. This gives us a way to separate acceptable persuasion from misleading decisions. Choices that only focus on something true (color, annotations, 
+                    titles, etc.) are acceptable because disclosing them does not change the data's conclusion. Misleading data is defined by choices that change what the data 
+                    says. To be specific, cutting the time window to hide a reversal or splicing different methods into one series, or even showing forecasts as if they 
+                    were measured data. For example, if adding one honest sentence to any of our captions would contradict the argument, then that choice is deceptive. However, 
+                    the line is not always clear. A truncated axis on a line chart is usually reasonable (and common), but on our FOR chart, it had the same effect as our
+                    exaggerated one. That is why we believe intent and disclosure matter just as much as any rule on color or axes.
                 </p>
             </section>
         </main>
